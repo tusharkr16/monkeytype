@@ -19,6 +19,7 @@ exports.signup = async (req, res) => {
 
 exports.login = async (req, res) => {
   const { username, password } = req.body;
+  console.log(username,password,"@@@")
   try {
     const user = await findUserByUsername(username);
     if (!user) {

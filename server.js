@@ -3,7 +3,8 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 require('./db/db.js'); 
 const authRoutes = require('./routes/authRoutes.js');
-const sessionRoutes = require('./routes/sessionRoutes.js')
+const sessionRoutes = require('./routes/sessionRoutes.js');
+const workflowRoutes = require('./routes/workflowRoutes.js')
 
 
 const app = express();
@@ -14,6 +15,7 @@ app.use(express.json());
 
 app.use('/api/auth', authRoutes); 
 app.use('/api/sessions', sessionRoutes);
+app.use('/api/',workflowRoutes)
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
